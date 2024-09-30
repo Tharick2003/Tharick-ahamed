@@ -54,3 +54,30 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+
+
+
+
+// Function to open tab content
+function openSkill(evt, skillName) {
+    var i, tabcontent, tablinks;
+
+    // Hide all tab content
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Remove active class from all buttons
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the selected tab content and add active class to the clicked button
+    document.getElementById(skillName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+
